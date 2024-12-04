@@ -1,0 +1,41 @@
+<div class="sectionBody">
+<div class="row">
+    <div class="col-6">
+        <h1 id="easily">EASILY</h1>
+        <p id="FirstSectionDesc">Unlock adventure with our rental service.</p>
+        <p id="FirstSectionDesc">Choose from a variety of tools !</p>
+        <button class="btn btn-primary" id="btn" data-bs-toggle="modal"
+        data-bs-target="#exampleModal">Sign In</button>
+    </div>
+    <div class="col-6">
+        <div class="d-flex flex-wrap align-items-end justify-content-end justify-content-end">
+            <img src="h.jpeg" alt="Car Image" class="img-fluid mt-3"
+                style="max-width: 100%; height: 600px; width: 600px;" id="carImage">
+        </div>
+    </div>
+</div>
+</div>
+
+ <!-- ======================================= UPDATING MODEL ===================================== -->
+
+ <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Update Employee</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                    <label for="recipient-name" class="col-form-label" [(ngModel)]="contact">Contact NO:</label>
+                    <input type="text" class="form-control" id="recipient-name" >
+                </div>                              
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                (click)="signIn()" 
+                >Sign In</button>
+            </div>
+        </div>
+    </div>
+</div>

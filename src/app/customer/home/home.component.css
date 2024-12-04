@@ -1,0 +1,19 @@
+#FirstSectionDesc{
+    font-size: medium;
+    font-weight: 600;
+    margin-left: 10vw;
+    color: #080808;
+}
+#easily{
+    margin-top: 5vw;
+    font-size: 15vw;
+    margin-left: 9vw;
+    color: #415a77;
+  }
+.sectionBody{
+    background-color: #a2d2ff;
+}
+
+#btn{
+    margin-left: 10vw;
+}

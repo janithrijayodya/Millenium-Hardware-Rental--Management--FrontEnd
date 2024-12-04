@@ -73,8 +73,8 @@
                       <tr>
                         <th>Customer ID</th>
                         <th>Name</th>
-                        <th>Citu</th>
                         <th>Contact No</th>
+                        <th>City</th>
                         <th></th>
                         <th></th>
                       </tr>
@@ -84,16 +84,15 @@
                 <div class="tbl-content">
                   <table cellpadding="0" cellspacing="0" border="0">
                     <tbody>
-                      <tr>
-                        <td>AAC</td>
-                        <td>AUSTRALIAN COMPANY </td>
-                        <td>$1.38</td>
-                        <td>+2.01</td>
-                        <td><button class="btn btn-danger" >Delete
+                      <tr *ngFor="let customer of customerList">
+                        <td>{{customer.customerID}}</td>
+                        <td>{{customer.customerName}} </td>
+                        <td>{{customer.customerContact}}</td>
+                        <td>{{customer.customerCity}}</td>
+                        <td><button class="btn btn-danger" (click)="deleteCustomer(customer.customerID)">Delete
                             </button></td>
                 <td><button class="btn btn-secondary" data-bs-toggle="modal"
-                        data-bs-target="#exampleModal">Update</button></td>
-
+                        data-bs-target="#exampleModal" (click)="view(customer)">Update</button></td>
                       </tr>
         
                     </tbody>
@@ -103,5 +102,32 @@
         </div>
     </div>
 
+ <!-- ======================================= UPDATING MODEL ===================================== -->
 
+ <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Update Employee</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                
+                <div class="mb-3">
+                    <label for="recipient-name" class="col-form-label">Contact No:</label>
+                    <input type="text" class="form-control" id="recipient-name"
+                        [(ngModel)]="searchedCus.customerContact">
+                </div>
+                <div class="mb-3">
+                    <label for="recipient-name" class="col-form-label">City:</label>
+                    <input type="text" class="form-control" id="recipient-name"
+                        [(ngModel)]="searchedCus.customerCity">
+                </div>
+                
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                    (click)="updateCustomer()">Update</button>
+            </div>
+        </div>
 </div>

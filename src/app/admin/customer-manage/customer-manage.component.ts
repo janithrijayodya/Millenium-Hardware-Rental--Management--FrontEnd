@@ -26,8 +26,35 @@ export class CustomerManageComponent {
     })
   }
 
+// ========== DELETE CUSTOMER ==========
 
+public deleteCustomer(customerID:any){
+  this.http.delete(` http://localhost:8080/customer/delete_by_id/${customerID}`,{ responseType: 'text' }).subscribe(data=>{
+    alert("customerID has been deleted !");
+  })
+}
+ // ================ GET ALL CUSTOMERS========
 
+ public customerList:any =[];
+
+ public getAllCustomers(){
+   this.http.get(" http://localhost:8080/customer/get_all").subscribe(data=>{
+     this.customerList=data;
+   })
+ }
+
+//  ==============update customer====
+public searchedCus:any = {};
+
+public view(customer:any){
+  this.searchedCus=customer;
+}
+
+public updateCustomer(){
+  this.http.put(" http://localhost:8080/customer/update_customer",this.searchedCus,{ responseType: 'text' }).subscribe(data=>{
+   alert("updated");
+  })
+}
 
   
 }

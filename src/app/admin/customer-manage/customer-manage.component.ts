@@ -13,7 +13,7 @@ import { FormsModule } from '@angular/forms';
 export class CustomerManageComponent {
   constructor(private http:HttpClient){}
 
-  // =add cus===
+ // =add cus===
   public customer:any={
     customerName:"",
     customerContact:"",
@@ -25,6 +25,8 @@ export class CustomerManageComponent {
       alert("customer added")
     })
   }
+
+
 
 
   
